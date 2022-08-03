@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+  </head>
+  <script>
+function x()
+{
+var all_array=[0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","`","~","!","@","$","%","^","&","*","(",")","-","_","=","+","[","{","]","}","|",";",":","'",",","<",".",">","?"]
+var final_key_array=[];
+
+let key_size=Math.floor(Math.random()*10)+5;
+console.log(key_size);
+var key_array=[];
+var j=key_size;
+for (let i=0; i<j; i++)
+{
+    key_array.push(Math.round(Math.random()*64));
+    console.log(key_array);
+}
+
+let x=key_array.length;
+
+for (let y=0; y<x; y++)
+{
+    let t=key_array[y];
+    let o=all_array[t];
+    
+    console.log("T");
+    console.log(t);
+    
+    console.log("O");
+    console.log(o);
+    
+    final_key_array.push(o);
+    let final_key_array_string=final_key_array.toString();
+    console.log(final_key_array);
+    console.log(final_key_array_string);
+    const final = final_key_array_string.replace(/,/g, '');
+    console.log(final);
+    document.getElementById("key").innerHTML=final;
+}
+}
+  </script>
+  <body>
+    <h1 id="header">Random Key</h1>
+    <br>
+    <button onclick="x()"> Generate </button>
+    <br>
+<h1 id="key"></h1>
+  </body>
+</html>
